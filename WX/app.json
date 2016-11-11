@@ -1,6 +1,7 @@
+//app.json文件来对微信小程序进行全局配置，决定页面文件的路径、窗口表现、设置网络超时时间、设置多 tab 等
 {
-  "pages":[
-    "pages/index/index",
+  "pages":[//页面路径
+    "pages/index/index",//首个为初始页面
     "pages/logs/logs",
     "pages/centerPage/centerPage",
     "pages/centerPage/introduce",
@@ -9,10 +10,32 @@
     "pages/centerPage/aboutUS",
     "pages/chatRoom/chatBox"
   ],
+  "tabBar":{//设置底部tab
+    "color": "#dddddd",
+    "selectedColor": "#6595e9",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "red",
+    "list": [{
+        "pagePath": "pages/centerPage/centerPage",
+        "text": "功能",
+        "iconPath": "tabIcon/tab_chatBox_default.png",
+        "selectedIconPath": "tabIcon/tab_centerPage_default.png"
+    },{
+        "pagePath": "pages/chatRoom/chatBox",
+        "text": "账户",
+        "iconPath": "tabIcon/tab_chatBox_default.png",
+        "selectedIconPath": "tabIcon/tab_chatBox_default.png"
+    }]
+  },
+  "networkTimeout": {// 设置网络超时
+    "request": 10000,
+    "downloadFile": 10000
+  },
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
-  }
+  },
+   "debug": true
 }
